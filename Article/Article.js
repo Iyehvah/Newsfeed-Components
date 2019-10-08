@@ -112,3 +112,54 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function myComponent(dataObject1) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleP1 = document.createElement('p');
+  const articleP2 = document.createElement('p');
+  const articleP3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+  const closeButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleP1);
+  article.appendChild(articleP2);
+  article.appendChild(articleP3);
+  article.appendChild(expandButton);
+  article.appendChild(closeButton);
+
+  article.classList.add('article');
+  articleTitle.classList.add('title');
+  articleDate.classList.add('date');
+  articleP1.classList.add('articleP1');
+  articleP2.classList.add('articleP2');
+  articleP3.classList.add('articleP3');
+  expandButton.classList.add('expandButton');
+ 
+
+
+
+  articleTitle.textContent = `${dataObject1.title}`;
+  articleDate.textContent = `${dataObject1.date}`;
+  articleP1.textContent = `${dataObject1.firstParagraph}`;
+  articleP2.textContent = `${dataObject1.secondParagraph}`;
+  articleP3.textContent = `${dataObject1.thirdParagraph}`;
+  expandButton.textContent = 'open';
+
+
+
+ 
+
+  expandButton.addEventListener('click', (e) => {
+    article.classList.toggle('article-open');
+  });
+
+
+  return article;
+}
+
+const articles = document.querySelector('.articles');
+
+data.forEach( dataObject => articles.appendChild( myComponent(dataObject) ));
