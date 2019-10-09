@@ -133,9 +133,6 @@ function myComponent(dataObject1) {
   article.classList.add('article');
   articleTitle.classList.add('title');
   articleDate.classList.add('date');
-  articleP1.classList.add('articleP1');
-  articleP2.classList.add('articleP2');
-  articleP3.classList.add('articleP3');
   expandButton.classList.add('expandButton');
  
 
